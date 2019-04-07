@@ -10,6 +10,7 @@ class Job < ApplicationRecord
         level: row['Niveau'],
         specialty: row['Spécialité']
       }
+      Job.where(attributes).destroy_all if Job.exists?(attributes)
       Job.create(attributes)
     end
   end
