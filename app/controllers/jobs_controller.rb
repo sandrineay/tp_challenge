@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   def index
     @jobs = Job.all
+    @job_count = Job.count
   end
 
   def import
