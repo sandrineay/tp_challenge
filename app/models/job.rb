@@ -46,15 +46,15 @@ class Job < ApplicationRecord
     end
   end
 
-  def valid?
+  def parity_valid?
     gap != 'No data' && gap != 'No staff' && gap <= 15
   end
 
-  def invalid?
+  def parity_invalid?
     gap != 'No data' && gap != 'No staff' && gap > 15
   end
 
   def row_class
-    valid? ? 'row-green' : invalid? ? 'row-red' : ''
+    parity_valid? ? 'row-green' : parity_invalid? ? 'row-red' : ''
   end
 end
