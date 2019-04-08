@@ -1,0 +1,39 @@
+job_zero:
+  year: '2013'
+  collectivity: 'DEPARTEMENT'
+  contract_type: 'TEMPS COMPLET'
+  name: 'ANIMATEURS T.IV'
+  level: 'ANIMATEUR T.IV'
+  specialty: 'activités sportives'
+  men_count: O
+  women_count: O
+
+job_nil:
+  year: '2015'
+  collectivity: 'COMMUNE'
+  contract_type: 'TEMPS COMPLET'
+  name: 'AGENTS INFORMATIQUES CADRES SUPERIEURS'
+  level: 'AGENT INFORMATIQUE CADRE SUPERIEUR'
+  specialty:
+  men_count:
+  women_count:
+
+job_1:
+  year: '2014'
+  collectivity: 'COMMUNE'
+  contract_type: 'TEMPS COMPLET'
+  name: 'AGENTS TECHNIQUES CONTRACTUELS CATEGORIE IV A, IV B'
+  level: 'AGENT TECHNIQUE CATEGORIE IV B CONTRACTUEL'
+  specialty:
+  men_count: 8
+  women_count: 7
+
+job_2:
+  year: '2015'
+  collectivity: 'COMMUNE'
+  contract_type: 'TEMPS INCOMPLET'
+  name: "ASSISTANTS SPECIALISES D' ENSEIGNEMENT MUSICAL CONTRACTUELS"
+  level: 'ASSISTANT CONTRACTUEL SPECIALISE  ENSEIGNEMENT ARTISTIQUE'
+  specialty:
+  men_count: 33
+  women_count: 54
