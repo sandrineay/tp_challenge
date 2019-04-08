@@ -9,4 +9,33 @@
   <% end %>
 
   <h2>Liste des emplois</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Emploi</th>
+        <th scope="col">Année</th>
+        <th scope="col">Collectivité</th>
+        <th scope="col">Type de contrat</th>
+        <th scope="col">Niveau</th>
+        <th scope="col">Spécialité</th>
+        <th scope="col"># Femmes</th>
+        <th scope="col"># Hommes</th>
+        <th scope="col">Ecart %</th>
+      </tr>
+    </thead>
+    <% @jobs.each do |job| %>
+      <tr>
+        <th scope="row"><%= job.name&.capitalize %></td>
+        <td><%= job.year %></td>
+        <td><%= job.collectivity&.capitalize %></td>
+        <td><%= job.contract_type&.capitalize %></td>
+        <td><%= job.level&.capitalize %></td>
+        <td><%= job.specialty&.capitalize %></td>
+        <td><%= job.women_count %></td>
+        <td><%= job.men_count %></td>
+        <td>TBD</td>
+      </tr>
+    <% end %>
+  </table>
 </div>
