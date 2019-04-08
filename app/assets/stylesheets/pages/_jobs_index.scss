@@ -1,0 +1,23 @@
+// Specific CSS for your home-page
+h1 {
+  font-weight: bolder;
+  font-size: 32px;
+  margin-top: 40px;
+  color: #3574FF;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 40px 0;
+  color: #3574FF;
+  opacity: 0.8;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.background-white {
+  background-color: #ffffff;
+}
