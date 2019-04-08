@@ -17,4 +17,24 @@ class Job < ApplicationRecord
     end
     return job_names
   end
+
+  def self.save_api_data(job_names)
+    job_names.uniq.each do |job_name|
+      url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=bilan-social-effectifs-non-titulaires-permanents&facet=annee&facet=collectivite&facet=type_de_contrat&facet=emplois&facet=niveau&refine.emplois=#{job_name}"
+      response = JSON.parse(RestClient.get(Addressable::URI.parse(url).normalize.to_str))
+      response['records'].each do |record|
+        job = Job.where(
+          year: record['fields']['annee'],
+          collectivity: record['fields']['collectivite'],
+          contract_type: record['fields']['type_de_contrat'],
+          name: record['fields']['emplois'],
+          level: record['fields']['niveau'],
+          specialty: record['fields']['specialite']
+        ).first
+        job&.women_count = record['fields']['nombre_de_femmes']
+        job&.men_count = record['fields']['nombre_d_hommes']
+        job&.save
+      end
+    end
+  end
 end

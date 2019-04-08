@@ -5,7 +5,8 @@ class JobsController < ApplicationController
   end
 
   def import
-    Job.import(params[:file].path)
+    job_names = Job.import(params[:file].path)
+    Job.save_api_data(job_names)
     redirect_to jobs_path
   end
 end
