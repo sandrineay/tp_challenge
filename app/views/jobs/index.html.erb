@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <% @jobs.each do |job| %>
-      <tr>
+      <tr class=<%= job.row_class %>>
         <th scope="row"><%= job.name&.capitalize %></td>
         <td><%= job.year %></td>
         <td><%= job.collectivity&.capitalize %></td>
@@ -38,7 +38,7 @@
         <td><%= job.specialty&.capitalize %></td>
         <td><%= job.women_count %></td>
         <td><%= job.men_count %></td>
-        <td>TBD</td>
+        <td><%= job.gap %></td>
       </tr>
     <% end %>
   </table>

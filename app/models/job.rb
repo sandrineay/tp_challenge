@@ -35,4 +35,26 @@ class Job < ApplicationRecord
       end
     end
   end
+
+  def gap
+    if women_count.nil? && men_count.nil?
+      'No data'
+    elsif women_count.zero? && men_count.zero?
+      'No staff'
+    else
+      ((women_count - men_count).abs / ((men_count + women_count).to_f / 2) * 100).round
+    end
+  end
+
+  def valid?
+    gap != 'No data' && gap != 'No staff' && gap <= 15
+  end
+
+  def invalid?
+    gap != 'No data' && gap != 'No staff' && gap > 15
+  end
+
+  def row_class
+    valid? ? 'row-green' : invalid? ? 'row-red' : ''
+  end
 end
