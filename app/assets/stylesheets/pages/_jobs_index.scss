@@ -1,16 +1,27 @@
-// Specific CSS for your home-page
 h1 {
   font-weight: bolder;
   font-size: 32px;
-  margin-top: 40px;
   color: #3574FF;
+  margin: 0;
+}
+
+.index-header {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
 }
 
 h2 {
+  font-weight: bold;
   font-size: 20px;
   margin: 40px 0;
   color: #3574FF;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .form-column {
@@ -30,4 +41,12 @@ h2 {
 .row-red {
   background-color: #ef818a;
   color: #70161d;
+}
+
+td {
+  font-size: 14px;
+}
+
+th {
+  font-size: 16px;
 }
