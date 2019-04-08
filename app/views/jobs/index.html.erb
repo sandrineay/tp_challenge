@@ -4,9 +4,13 @@
   <h2>Importer la donnée</h2>
 
   <%= form_tag import_jobs_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag 'Importer' %>
+    <div class="form-column">
+      <%= file_field_tag :file %>
+      <%= submit_tag 'Importer', class: 'btn-submit' %>
+    </div>
   <% end %>
+
+  <hr>
 
   <h2>Liste des emplois (<%= @job_count %>)</h2>
 

@@ -1,0 +1,11 @@
+.btn-submit {
+  margin-top: 25px;
+  max-width: 120px;
+  background-color: #3574FF;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 8px;
+  &:hover {
+    opacity: 0.9;
+  }
+}
