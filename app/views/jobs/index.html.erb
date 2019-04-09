@@ -8,7 +8,7 @@
   <%= form_tag import_jobs_path, multipart: true do %>
     <div class="form-column">
       <%= file_field_tag :file %>
-      <%= submit_tag 'Importer', class: 'btn-submit' %>
+      <%= submit_tag 'Importer', class: 'btn-submit', id: 'submit-file', disabled: true %>
     </div>
   <% end %>
 
