@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   def index
-    @jobs = Job.order(name: :asc).order(year: :desc)
+    @jobs = Job.order('LOWER(name) ASC').order(year: :desc)
     @job_count = Job.count
   end
 
