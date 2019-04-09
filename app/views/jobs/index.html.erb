@@ -14,7 +14,13 @@
 
   <hr>
 
-  <h2>Liste des emplois (<%= @job_count %>)</h2>
+  <div class="job-list-header">
+    <h2>Liste des emplois (<%= @job_count %>)</h2>
+    <div class="color-caption">
+      <p class='row-green caption'>Parité valide</p>
+      <p class='row-red caption'>Parité non valide</p>
+    </div>
+  </div>
 
   <table class="table background-white">
     <thead>

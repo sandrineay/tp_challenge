@@ -58,3 +58,20 @@ td {
 th {
   font-size: 16px;
 }
+
+.job-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color-caption {
+  display: flex;
+  font-size: 14px;
+}
+
+.caption {
+  padding: 5px 10px;
+  margin-left: 30px;
+  border-radius: 3px;
+}
