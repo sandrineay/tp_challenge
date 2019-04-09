@@ -29,6 +29,10 @@ h2 {
   flex-direction: column;
 }
 
+input#file {
+  max-width: 300px;
+}
+
 .background-white {
   background-color: #ffffff;
 }
