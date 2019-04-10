@@ -41,17 +41,23 @@ class Job < ApplicationRecord
       'No data'
     elsif women_count.zero? && men_count.zero?
       'No staff'
+    elsif women_count.zero? || men_count.zero?
+      'Not valid'
+    elsif women_count >= men_count
+      ((women_count - men_count) / women_count.to_f * 100).round
     else
-      ((women_count - men_count).abs / ((men_count + women_count).to_f / 2) * 100).round
+      ((men_count - women_count) / men_count.to_f * 100).round
     end
+      # Corrected from:
+      # ((women_count - men_count).abs / ((men_count + women_count).to_f / 2) * 100).round
   end
 
   def parity_valid?
-    gap != 'No data' && gap != 'No staff' && gap <= 15
+    gap != 'No data' && gap != 'No staff' && gap != 'Not valid' && gap <= 15
   end
 
   def parity_invalid?
-    gap != 'No data' && gap != 'No staff' && gap > 15
+    gap == 'No data' || gap == 'No staff' || gap == 'Not valid' || gap > 15
   end
 
   def row_class
